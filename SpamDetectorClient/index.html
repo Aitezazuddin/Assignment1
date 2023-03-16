@@ -1,39 +1,46 @@
+
 <!doctype html>
 <html class="no-js" lang="">
-
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Spam Detector Dashboard</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <meta property="og:title" content="">
   <meta property="og:type" content="">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
-
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
-
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-
   <meta name="theme-color" content="#fafafa">
 </head>
-
 <body>
-
-  <!-- Add your site or application content here -->
-
-
-
-
-
+  <header>
+    <h1>About</h1>
+    <p>Hi, my name is [Your Name] and I'm the creator of this Spam Detector Dashboard. This dashboard uses a machine learning model to categorize files as either spam or ham based on their contents. You can use it to quickly identify which files in a folder are likely to be spam.</p>
+  </header>
+  <main>
+    <h1>Spam Detector Dashboard</h1>
+    <p>Result of spam detection:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>File</th>
+          <th>Spam Percentage</th>
+          <th>Class</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- Table data will be populated by JavaScript -->
+      </tbody>
+    </table>
+  </main>
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
@@ -41,5 +48,4 @@
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
-
 </html>

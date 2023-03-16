@@ -32,6 +32,9 @@ public class TestFile {
         this.actualClass = actualClass;
     }
 
+    public TestFile(String name, boolean isSpam) {
+    }
+
     /**
      * @return the name of the file
      */
@@ -50,4 +53,8 @@ public class TestFile {
     public void setFilename(String value) { this.filename = value; }
     public void setSpamProbability(double value) { this.spamProbability = value; }
     public void setActualClass(String value) { this.actualClass = value; }
+
+    public Object isSpam() {
+        return null;
+    }
 }

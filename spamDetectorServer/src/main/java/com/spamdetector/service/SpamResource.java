@@ -5,60 +5,56 @@ import com.spamdetector.util.SpamDetector;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.Response;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
-
-import jakarta.ws.rs.core.Response;
 
 @Path("/spam")
 public class SpamResource {
 
-//    your SpamDetector Class responsible for all the SpamDetecting logic
-    SpamDetector detector = new SpamDetector();
+    // SpamDetector object responsible for all the SpamDetecting logic
+    private SpamDetector detector;
 
-
-    SpamResource(){
-//        TODO: load resources, train and test to improve performance on the endpoint calls
-        System.out.print("Training and testing the model, please wait");
-
-//      TODO: call  this.trainAndTest();
-
-
+    // Constructor to train and test the detector upon instantiation
+    public SpamResource() throws IOException {
+        System.out.println("Training and testing the model, please wait...");
+        this.trainAndTest();
     }
+
     @GET
     @Produces("application/json")
     public Response getSpamResults() {
-//       TODO: return the test results list of TestFile, return in a Response object
-
-        return null;
+        // Return the test results list of TestFile, return in a Response object
+        List<TestFile> testResults = this.detector.getTestResults();
+        return Response.ok(testResults).build();
     }
 
     @GET
     @Path("/accuracy")
     @Produces("application/json")
     public Response getAccuracy() {
-//      TODO: return the accuracy of the detector, return in a Response object
-
-        return null;
+        // Return the accuracy of the detector, return in a Response object
+        double accuracy = this.detector.getAccuracy();
+        return Response.ok("{\"val\": " + accuracy + "}").build();
     }
 
     @GET
     @Path("/precision")
     @Produces("application/json")
     public Response getPrecision() {
-       //      TODO: return the precision of the detector, return in a Response object
-
-        return null;
+        // Return the precision of the detector, return in a Response object
+        double precision = this.detector.getPrecision();
+        return Response.ok("{\"val\": " + precision + "}").build();
     }
 
-    private List<TestFile> trainAndTest()  {
-        if (this.detector==null){
-            this.detector = new SpamDetector();
-        }
+    private void trainAndTest() throws IOException {
+        // Load the main directory "data" here from the Resources folder
+        File mainDirectory = new File(getClass().getClassLoader().getResource("data").getFile());
 
-//        TODO: load the main directory "data" here from the Resources folder
-        File mainDirectory = null;
-        return this.detector.trainAndTest(mainDirectory);
+        // Train and test the detector
+        this.detector = new SpamDetector();
+        this.detector.trainAndTest(mainDirectory);
     }
 }
