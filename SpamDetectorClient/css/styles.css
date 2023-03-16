@@ -1,0 +1,68 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set a dark blue background for the whole page */
+  body {
+    background-color: #0f1e3b;
+    color: #fff;
+  }
+  
+  /* Add padding to the table and style table headers */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  thead {
+    background-color: #ff8c00;
+    color: #fff;
+  }
+  
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th:first-child,
+  td:first-child {
+    padding-left: 20px;
+  }
+  
+  th:last-child,
+  td:last-child {
+    padding-right: 20px;
+  }
+  
+  /* Style the second table for precision and accuracy */
+  #metrics {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #f9d5c3;
+    color: #444;
+  }
+  
+  #metrics th,
+  #metrics td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #metrics th {
+    background-color: #ffa07a;
+    color: #fff;
+  }
+  
