@@ -12,10 +12,14 @@ To improve the model's accuracy, we experimented with different feature extracti
 To run the spam detector, follow these steps:
 
 Clone the repository: git clone https://github.com/Aitezazuddin/Assignment1.git
+
 Install the necessary dependencies: npm install
+
 Start the server: npm start
+
 Open a web browser and go to http://localhost:8000
 
 #### References
 [1] https://en.wikipedia.org/wiki/Bag-of-words_model
+
 [2] https://en.wikipedia.org/wiki/Naive_Bayes_spam_filtering
